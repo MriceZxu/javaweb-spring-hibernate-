@@ -1,0 +1,19 @@
+<!-- Spring-Common.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+	<bean id = "accountManager" class = "com.service.AccountManager">
+		<property name="accountDao" ref = "accountDao"></property>
+	</bean>
+	
+	<bean id = "talkManager" class = "com.service.TalkManager">
+		<property name="accountDao" ref = "accountDao"></property>
+		<property name="talkContentDao" ref = "talkContentDao"></property>
+	</bean>
+
+	<bean id = "accountDao" class = "com.dao.impl.AccountDao"></bean>
+	<bean id = "talkContentDao" class = "com.dao.impl.TalkContentDao"></bean>
+
+</beans>
